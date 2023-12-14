@@ -1,0 +1,53 @@
+{% extends 'partials/base.html' %}
+{% block title %}Customer Detail Page{% endblock %}
+
+
+{% block content %}
+{% include 'partials/topnav.html' %}
+<div class="container">
+<div class="row my-4">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                Customer Detail Page
+            </div>
+            <div class="row p-3">
+                <div class="col-md-8">
+                    <table class="table table-borderless">
+                        <thead>
+                            <span class="h4">Porfile Information</span class="h4">
+                            <hr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Name</th>
+                                <td>{{ users.username }}</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>{{ users.email }}</td>
+                            </tr>
+                            <tr>
+                                <th>Phone</th>
+                                <td>{{ users.profile.phone }}</td>
+                            </tr>
+                            <tr>
+                                <th>Address</th>
+                                <td>{{ users.profile.address }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4">
+                    <img class="img-thumbnail" src="{{ users.profile.images.url }}" alt="profile-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+</div>
